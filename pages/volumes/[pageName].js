@@ -3,15 +3,14 @@ import { volumes } from "../../lib/data";
 import { useRouter } from "next/router";
 import { useId, useState } from "react";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function LordOfRings() {
   const router = useRouter();
   const { pageName } = router.query;
   const currentBook = volumes.find(({ slug }) => slug === pageName);
-  const bookId = useId;
 
   function VolumeButtonPrevious() {
-    const currentBook = volumes.find(({ slug }) => slug === pageName);
     const currentIndex = volumes.indexOf(currentBook);
     const defaultButtonText = currentIndex === 0 ? false : true;
     const [buttontext, setButtonText] = useState(defaultButtonText);
@@ -38,7 +37,6 @@ export default function LordOfRings() {
   }
 
   function VolumeButtonNext() {
-    const currentBook = volumes.find(({ slug }) => slug === pageName);
     const currentIndex = volumes.indexOf(currentBook);
     const defaultButtonText =
       currentIndex + 1 === volumes.length ? false : true;
@@ -67,12 +65,16 @@ export default function LordOfRings() {
 
   return (
     <div>
+      <Head>
+        <title>{currentBook.title}</title>
+      </Head>
+
       <Link href="/">All Volumes</Link>
       <h1>{currentBook.title}</h1>
       <p>{currentBook.description}</p>
       <ul>
         {currentBook.books.map(({ ordinal, title }) => (
-          <li key={bookId}>
+          <li key={useId()}>
             {ordinal}:{title}
           </li>
         ))}
