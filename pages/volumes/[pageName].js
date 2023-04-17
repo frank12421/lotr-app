@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { volumes } from "../../lib/data";
 import { useRouter } from "next/router";
-import { useId, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
 
@@ -74,7 +74,7 @@ export default function LordOfRings() {
       <p>{currentBook.description}</p>
       <ul>
         {currentBook.books.map(({ ordinal, title }) => (
-          <li key={useId()}>
+          <li key={currentBook.titel + ordinal}>
             {ordinal}:{title}
           </li>
         ))}
