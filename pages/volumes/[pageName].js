@@ -85,10 +85,10 @@ export default function LordOfRings() {
       </ul>
       <div>
         <Image
-          src={`/../public/images/${currentBook.slug}.png`}
+          src={`/../public${currentBook.cover}`}
           height={230}
           width={140}
-          alt={`${currentBook}`}
+          alt={`${currentBook.title}`}
         />
       </div>
       <VolumeButtonPrevious />
