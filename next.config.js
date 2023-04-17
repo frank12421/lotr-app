@@ -15,4 +15,17 @@ const nextConfig = {
   },
 };
 
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "https://lotr-app-5f6w.vercel.app/",
+        port: "",
+        pathname: "/public/images",
+      },
+    ],
+  },
+};
+
 module.exports = nextConfig;
