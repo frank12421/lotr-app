@@ -10,6 +10,10 @@ export default function LordOfRings() {
   const { pageName } = router.query;
   const currentBook = volumes.find(({ slug }) => slug === pageName);
 
+  if (!currentBook) {
+    return null;
+  }
+
   function VolumeButtonPrevious() {
     const currentIndex = volumes.indexOf(currentBook);
     const defaultButtonText = currentIndex === 0 ? false : true;
