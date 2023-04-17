@@ -28,7 +28,6 @@ export default function LordOfRings() {
         router.push(`/volumes/${volumes[currentIndex - 1].slug}`);
       }
     }
-
     return (
       <button
         onClick={() => {
