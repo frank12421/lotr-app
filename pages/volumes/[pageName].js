@@ -85,7 +85,7 @@ export default function LordOfRings() {
       </ul>
       <div>
         <Image
-          src={`/../public${currentBook.cover}`}
+          src={`${currentBook.cover}`}
           height={230}
           width={140}
           alt={`${currentBook.title}`}
