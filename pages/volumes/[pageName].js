@@ -74,7 +74,7 @@ export default function LordOfRings() {
       <p>{currentBook.description}</p>
       <ul>
         {currentBook.books.map(({ ordinal, title }) => (
-          <li key={currentBook.titel + ordinal}>
+          <li key={currentBook.title + ordinal}>
             {ordinal}:{title}
           </li>
         ))}
