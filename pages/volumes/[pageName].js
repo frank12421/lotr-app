@@ -8,6 +8,7 @@ export default function LordOfRings() {
   const router = useRouter();
   const { pageName } = router.query;
   const currentBook = volumes.find(({ slug }) => slug === pageName);
+  const bookId = useId;
 
   function VolumeButtonPrevious() {
     const currentBook = volumes.find(({ slug }) => slug === pageName);
@@ -71,7 +72,7 @@ export default function LordOfRings() {
       <p>{currentBook.description}</p>
       <ul>
         {currentBook.books.map(({ ordinal, title }) => (
-          <li key={useId}>
+          <li key={bookId}>
             {ordinal}:{title}
           </li>
         ))}
