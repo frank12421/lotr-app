@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import Image from "next/image";
 import Head from "next/head";
+import StyledBackground from "./StyledBackground";
 
 export default function LordOfRings() {
   const router = useRouter();
@@ -68,28 +69,32 @@ export default function LordOfRings() {
 
   return (
     <div>
+      <Link href="/">All Volumes</Link>
+
       <Head>
         <title>{currentBook.title}</title>
       </Head>
-
-      <Link href="/">All Volumes</Link>
       <h1>{currentBook.title}</h1>
       <p>{currentBook.description}</p>
-      <ul>
-        {currentBook.books.map(({ ordinal, title }) => (
-          <li key={currentBook.title + ordinal}>
-            {ordinal}:{title}
-          </li>
-        ))}
-      </ul>
-      <div>
-        <Image
-          src={`${currentBook.cover}`}
-          height={230}
-          width={140}
-          alt={`${currentBook.title}`}
-        />
-      </div>
+
+      <StyledBackground backgroundcolor={currentBook.color}>
+        <ul>
+          {currentBook.books.map(({ ordinal, title }) => (
+            <li key={currentBook.title + ordinal}>
+              {ordinal}:{title}
+            </li>
+          ))}
+        </ul>
+        <div>
+          <Image
+            src={`${currentBook.cover}`}
+            height={230}
+            width={140}
+            alt={`${currentBook.title}`}
+          />
+        </div>
+      </StyledBackground>
+
       <VolumeButtonPrevious />
       <VolumeButtonNext />
     </div>
