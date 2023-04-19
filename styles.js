@@ -14,10 +14,15 @@ export default createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    font-family: ${lora.style.fontFamily}, serif;
-    max-width: 390px;
-    max-height: 844px;
-    ;
+  font-family: ${lora.style.fontFamily}, serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 48px 0px;
+  gap: 48px;
+  position: relative;
+  width: 390px;
+  height: 844px;
+  background: #f1f1f1;
   }
 `;

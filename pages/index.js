@@ -7,7 +7,7 @@ import Head from "next/head";
 export default function HomePage() {
   const router = useRouter();
   return (
-    <div>
+    <>
       <Head>
         <title>Lord of the Rings</title>
       </Head>
@@ -22,6 +22,6 @@ export default function HomePage() {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
